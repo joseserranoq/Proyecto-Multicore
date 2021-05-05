@@ -2,8 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys #Sirve para encontrar los resultados que busco en alguna barra de búsqueda
 import time
 
-    #PATH = "C:\\Users\\Lenovo\\Desktop\\Selenium examples\\chromedriver.exe"
-driver = webdriver.Chrome()
+path = 'Proyecto-Multicore\chromedriver.exe'    
+driver = webdriver.Chrome(path)
 def ejemplo1(driver1):
 
 
@@ -32,30 +32,26 @@ def ejemplo1(driver1):
 
 def ejemplo2(driver2):
     #SIRVE PARA ENCONTRAR EL TEXTO DE LOS TÍTULOS RELACIONADOS CON EL TEMA PYCON
-    from selenium import webdriver
-    from selenium.webdriver.common.keys import Keys #Sirve para encontrar los resultados que busco en alguna barra de búsqueda
-    import time
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
 
 
-    #path = "C:\\Users\\Lenovo\\Desktop\\Selenium examples\\chromedriver.exe"
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(path)
 
     driver.get("http://www.python.org")
-
     searchbar = driver.find_element_by_id("id-search-field")
     searchbar.send_keys("pycon")
     button = driver.find_element_by_id("submit")
     button.click()
-
+    
     try:
         #funciona para encontrar un elemento que se encuentre en la página.
         element= WebDriverWait(driver,10).until(EC.presence_of_all_elements_located((By.TAG_NAME,'ul')))
         for header in element:
             hli = header.find_elements_by_tag_name("li")
             for header3 in hli:
+
                 #print(header3.text)   
                 hrefs = header3.find_elements_by_tag_name('h3')
                 for href in hrefs:
