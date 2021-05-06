@@ -35,7 +35,7 @@ def Generate_info(): #It has some limitations like adult verification by steam, 
             Obtain_amazonprice(sites[site+1])   #Another idea to storage the content of this function could be that all the functions return the value we want
             Obtain_steamprice(sites[site+2])    #so all the content could be storage in a .json file by creating a way to insert them
             Obtain_Metascore(sites[site+3])
-            #Obtain_HLongtobeat(sites[site+4])
+            Obtain_HLongtobeat(sites[site+4])
     driver.quit()
     return
 
