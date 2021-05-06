@@ -40,6 +40,7 @@ def Generate_info(): #It has some limitations like adult verification by steam, 
     return
 
 def Obtain_amazonprice(link):
+
     driver.get(link)
 
     amasearch = driver.find_element_by_id('priceblock_ourprice') #Its where is located the price of the game.
