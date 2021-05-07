@@ -35,7 +35,7 @@ def Generate_info(): #It has some limitations like adult verification by steam, 
             Obtain_amazonprice(sites[site+1])   #Another idea to storage the content of this function could be that all the functions return the value we want
             Obtain_steamprice(sites[site+2])    #so all the content could be storage in a .json file by creating a way to insert them
             Obtain_Metascore(sites[site+3])
-            #Obtain_HLongtobeat(sites[site+4])
+            Obtain_HLongtobeat(sites[site+4])
     driver.quit()
     return
 
@@ -47,15 +47,41 @@ def Obtain_amazonprice(link):
     print(amasearch.text) #It converts the object to a string
     return
 
-def Obtain_steamprice(link): #class game_purchase_action_bg, 
+def age_ver(link): #When age verification in steam appears the this function will pass the age verification to get the price of the game
     driver.get(link)
+    agemess = driver.find_element_by_class_name('agegate_birthday_desc')
+    y= driver.find_element_by_xpath('//option[@value="1900"]')
+    y.click()
+    seepage= driver.find_element_by_xpath('//a[@onclick="ViewProductPage()"]')
+    seepage.click()
+    try: #When the url changes we need to use wait method to search for the another values
+        element= WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='game_purchase_price price']")))   
+        price = element.text            
+        print(f'{price} sol1')
+    except:
+        element= WebDriverWait(driver,10).until(EC.presence_of_element_located((By.CLASS_NAME,'discount_final_price')))
+        price= element.text
+        print(f'{price} sol2') 
+    return price
 
-    stsearch= driver.find_elements_by_class_name('game_purchase_action_bg') 
-    element= stsearch[0].text
-    p= element.split('\n') #The price is in the 0 position
-    price = p[0]
-    print(price)
-    return
+def Obtain_steamprice(link): 
+    agever = link.split('/') #This will convert the link in a list where the position will be divided for '/'
+    if agever[3] == 'agecheck': 
+        price = age_ver(link)
+    else:
+        driver.get(link)
+        try:    #This is implemented because if a variable called self.find_element... does not appear will raise an error
+            stsearch= driver.find_element_by_xpath('//div[@class="game_purchase_price price"]')
+            price= stsearch.text
+            print(f'{price} sol3')
+
+             
+        except:
+            stsearch= driver.find_elements_by_xpath("//div[@id='game_area_purchase']")
+            disc_element = stsearch[0].find_element_by_class_name('discount_final_price') #In this position is located the string that the function needs
+            price = disc_element.text
+            print(f'{price} sol4')
+    return price
 
 def Obtain_Metascore(link): #tag a, tag span
     driver.get(link)
