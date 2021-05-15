@@ -64,7 +64,7 @@ https://store.steampowered.com/app/1295270/SaGa_Frontier_Remastered/
 https://www.metacritic.com/game/switch/saga-frontier-remastered
 https://howlongtobeat.com/game?id=89575
 FORZA HORIZON 4
-https://www.amazon.com/s?k=FORZA+HORIZON+4&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_2
+https://www.amazon.com/-/es/Forza-Horizon-4-Standard-Xbox-One/dp/B07DJZHQPX/ref=sr_1_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=FORZA+HORIZON+4+pc&qid=1620422716&sr=8-5
 https://store.steampowered.com/app/1293830/Forza_Horizon_4/
 https://www.metacritic.com/game/xbox-one/forza-horizon-4
 https://howlongtobeat.com/game?id=55661
@@ -93,3 +93,8 @@ https://www.amazon.com/-/es/Monster-Hunter-World-Iceborne-PlayStation-Standard/d
 https://store.steampowered.com/app/582010/Monster_Hunter_World/
 https://www.metacritic.com/game/playstation-4/monster-hunter-world
 https://howlongtobeat.com/game?id=52493
+GTA V
+https://www.amazon.com/-/es/Grand-Theft-Auto-Edici%C3%B3n-Premium/dp/B08WKQ56N5/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=gta+v&qid=1620420336&sr=8-1
+https://store.steampowered.com/agecheck/app/271590/
+https://www.metacritic.com/game/pc/grand-theft-auto-v
+https://howlongtobeat.com/game?id=4064

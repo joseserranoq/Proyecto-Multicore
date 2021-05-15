@@ -3,7 +3,17 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import time
+import concurrent.futures
+import threading
+
+import json
+
+
+#Se puede implementar mediante el threading que corra las funciones en forma paralela, creando funciones que ocupen los links de la lista pero que no dependan una de otra y mediante 
+#la obtención de las listas (listadetítulos,precios de steam, precios de amazon, score de metacritic, horas de how long to beat) se utilicen en una función para almacernalos
+#mediante un for secuencial todos los datos en orden en un .json
 
 #x = open('Proyecto-Multicore\games.txt','r')
 #s = x.readlines()
@@ -25,27 +35,18 @@ import time
 #Then with the obtainable information, it will allow to generate a .json file to start developing the web page with the help of HTML.
 path = 'Proyecto-Multicore\chromedriver.exe'    
 driver = webdriver.Chrome(path)
-#It will allow to obtain the information that goes to .json's file
-def Generate_info(): #It has some limitations like adult verification by steam, so the function will get content from games below that category
-    
-    with open('Proyecto-Multicore\games.txt','r') as file1:
-        sites = file1.readlines()
-        for site in range(0,len(sites),5): #It creates indexes for the games, each game has information in 4 positions after the chose index in the loop,
-            print(sites[site])                         #It will be a function to save the titles of the games
-            Obtain_amazonprice(sites[site+1])   #Another idea to storage the content of this function could be that all the functions return the value we want
-            Obtain_steamprice(sites[site+2])    #so all the content could be storage in a .json file by creating a way to insert them
-            Obtain_Metascore(sites[site+3])
-            Obtain_HLongtobeat(sites[site+4])
-    driver.quit()
-    return
 
-def Obtain_amazonprice(link):
 
-    driver.get(link)
 
-    amasearch = driver.find_element_by_id('priceblock_ourprice') #Its where is located the price of the game.
-    print(amasearch.text) #It converts the object to a string
-    return
+def Obtain_amazonprice(links):
+
+    driver.get(links)
+    try:
+        amasearch = driver.find_element_by_id('priceblock_ourprice') #Its where is located the price of the game.
+        amaprice= amasearch.text #It converts the object to a string
+    except:
+        amaprice = 'Juego no disponible. '
+    return print(amaprice)
 
 def age_ver(link): #When age verification in steam appears the this function will pass the age verification to get the price of the game
     driver.get(link)
@@ -95,5 +96,33 @@ def Obtain_HLongtobeat(link):
 
     HLTBsearch = driver.find_elements_by_class_name('game_times')
     print(HLTBsearch[0].text)
+    return
 
+#It will allow to obtain the information that goes to .json's file
+def Generate_info(): #It has some limitations like adult verification by steam, so the function will get content from games below that category
+    titles = list() 
+    amazon = list() 
+    steam = list() 
+    meta = list() 
+    hwlong = list()
+    with open('Proyecto-Multicore\games.txt','r') as file1:
+        sites = file1.readlines()
+
+        for site in range(0,len(sites),5): #It creates indexes for the games, each game has information in 4 positions after the chose index in the loop,
+            r1=sites[site]                         #It will be a function to save the titles of the games
+            titles.append(r1)
+            print(r1)
+            #r2=Obtain_amazonprice(sites[site+1])   #Another idea to storage the content of this function could be that all the functions return the value we want
+            #amazon.append(r2)
+            r3=Obtain_steamprice(sites[site+2])    #so all the content could be storage in a .json file by creating a way to insert them
+            steam.append(r3)
+            #r4=Obtain_Metascore(sites[site+3])
+            #meta.append(r4)
+            r5=Obtain_HLongtobeat(sites[site+4])
+            hwlong.append(r5)
+
+
+
+    driver.quit()
+    return titles,amazon,steam,meta,hwlong
 Generate_info()
