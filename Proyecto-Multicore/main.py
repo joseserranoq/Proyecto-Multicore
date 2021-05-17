@@ -35,7 +35,7 @@ import json
 #Then with the obtainable information, it will allow to generate a .json file to start developing the web page with the help of HTML.
 path = 'Proyecto-Multicore\chromedriver.exe'    
 driver = webdriver.Chrome(path)
-
+titles = list() 
 
 
 def Obtain_amazonprice(links):
@@ -100,29 +100,47 @@ def Obtain_HLongtobeat(link):
 
 #It will allow to obtain the information that goes to .json's file
 def Generate_info(): #It has some limitations like adult verification by steam, so the function will get content from games below that category
-    titles = list() 
-    amazon = list() 
-    steam = list() 
-    meta = list() 
-    hwlong = list()
+
+   
+
     with open('Proyecto-Multicore\games.txt','r') as file1:
         sites = file1.readlines()
 
         for site in range(0,len(sites),5): #It creates indexes for the games, each game has information in 4 positions after the chose index in the loop,
             r1=sites[site]                         #It will be a function to save the titles of the games
-            titles.append(r1)
-            print(r1)
-            #r2=Obtain_amazonprice(sites[site+1])   #Another idea to storage the content of this function could be that all the functions return the value we want
-            #amazon.append(r2)
+            
+        
+            r2=Obtain_amazonprice(sites[site+1])   #Another idea to storage the content of this function could be that all the functions return the value we want
+          
             r3=Obtain_steamprice(sites[site+2])    #so all the content could be storage in a .json file by creating a way to insert them
-            steam.append(r3)
-            #r4=Obtain_Metascore(sites[site+3])
-            #meta.append(r4)
+         
+            r4=Obtain_Metascore(sites[site+3])
+           
             r5=Obtain_HLongtobeat(sites[site+4])
-            hwlong.append(r5)
+            
+            titles.append(r1,r2,r3,r4,r5)
+            
+            for i in titles:
+                print(i)
 
 
 
-    driver.quit()
-    return titles,amazon,steam,meta,hwlong
+def func():
+        with open('about.txt','w') as file:
+            for i in range(0,len(titles)):
+                file.write(f'{nombre[i]},{precio[i]},{score[i]},{dura[i]},{tiem[i]}')
+
+            file.close()
+def func2():
+        with open('about.txt','r') as file:
+            x = file.readlines()
+            div = x[0].split(',')
+            print(div)
+        return
+
+driver.quit()
+   
+
 Generate_info()
+func()
+func2()
