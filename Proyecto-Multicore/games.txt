@@ -24,7 +24,7 @@ https://store.steampowered.com/app/316790/Grim_Fandango_Remastered/
 https://www.metacritic.com/game/pc/grim-fandango
 https://howlongtobeat.com/game?id=4123
 Bastion
-https://www.amazon.com/-/es/Bastion-Limited-Run-173-PlayStation-Vita/dp/B07L4J3RZ8/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=YZBB98C7VGC9&dchild=1&keywords=bastion+ps4&qid=1620276496&sprefix=BASTION+%2Caps%2C282&sr=8-2
+https://www.amazon.com/-/es/Bastion-Limited-Run-174-PlayStation-4/dp/B07L4CNWRW/ref=pd_sbs_3?pd_rd_w=UqEUQ&pf_rd_p=1f09e623-97c8-4c74-883f-063b7295f49e&pf_rd_r=JEVV8EJ1GK0Y2T4HNKEQ&pd_rd_r=d8ff092f-7e08-4f38-8a70-c95ec307c18a&pd_rd_wg=X9XdR&pd_rd_i=B07L4CNWRW&psc=1
 https://store.steampowered.com/app/107100/Bastion/
 https://www.metacritic.com/game/playstation-4/bastion
 https://howlongtobeat.com/game?id=869
@@ -98,6 +98,11 @@ https://www.amazon.com/-/es/Grand-Theft-Auto-Edici%C3%B3n-Premium/dp/B08WKQ56N5/
 https://store.steampowered.com/agecheck/app/271590/
 https://www.metacritic.com/game/pc/grand-theft-auto-v
 https://howlongtobeat.com/game?id=4064
+Cyberpunk 2077
+https://www.amazon.com/-/es/Cyberpunk-2077-PlayStation-4/dp/B08SPZRVGQ/ref=sr_1_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3DVR9JFZKFVSA&dchild=1&keywords=cyberpunk+2077&qid=1621119918&sprefix=cyber%2Caps%2C616&sr=8-3
+https://store.steampowered.com/agecheck/app/1091500/
+https://www.metacritic.com/game/playstation-4/cyberpunk-2077
+https://howlongtobeat.com/game?id=2127
 NBA 2K21
 https://www.amazon.com/NBA-2K21-Twister-Parent/dp/B08BXHGPVB/ref=sr_1_9_sspa?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=27R9A0DA4098G&dchild=1&keywords=juegos+playstation+4&qid=1621115773&sprefix=JUEGOS+pla%2Caps%2C431&sr=8-9-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyTjZLOTBTUDRDOTRaJmVuY3J5cHRlZElkPUEwOTgwNzgyM1JXV04xRlROUUNJUiZlbmNyeXB0ZWRBZElkPUEwODkxMTU4MkJDMUhUSlYyT1ZCWSZ3aWRnZXROYW1lPXNwX210ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=
 https://store.steampowered.com/app/1225330/NBA_2K21/
@@ -108,11 +113,6 @@ https://www.amazon.com/-/es/FIFA-21-PS4/dp/B08BGMSHFQ/ref=sr_1_2?__mk_es_US=%C3%
 https://store.steampowered.com/app/1313860/EA_SPORTS_FIFA_21/
 https://www.metacritic.com/game/playstation-4/fifa-21
 https://howlongtobeat.com/game?id=82088
-Cyberpunk 2077
-https://www.amazon.com/-/es/Cyberpunk-2077-PlayStation-4/dp/B08SPZRVGQ/ref=sr_1_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3DVR9JFZKFVSA&dchild=1&keywords=cyberpunk+2077&qid=1621119918&sprefix=cyber%2Caps%2C616&sr=8-3
-https://store.steampowered.com/agecheck/app/1091500/
-https://www.metacritic.com/game/playstation-4/cyberpunk-2077
-https://howlongtobeat.com/game?id=2127
 Call of Duty: Black Ops III
 https://www.amazon.com/-/es/Call-Duty-Black-Ops-III-PS4/dp/B00W1HIVAQ/ref=sr_1_8?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=call+of+duty+black+ops&qid=1621120153&sr=8-8
 https://store.steampowered.com/agecheck/app/311210/
@@ -123,11 +123,11 @@ https://www.amazon.com/-/es/Edici%C3%B3n-legendaria-Mass-Effect/dp/B08MXTDGN6/re
 https://store.steampowered.com/agecheck/app/1328670/
 https://www.metacritic.com/game/playstation-4/mass-effect-legendary-edition
 https://howlongtobeat.com/game?id=84851
-Resident Evil Village
-https://www.amazon.com/Resident-Evil-Village-PlayStation-5-Standard/dp/B08TYCWK3C/ref=sr_1_1_sspa?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28NJ8UVWQ2QPI&dchild=1&keywords=resident+evil+8+village&qid=1621120626&sprefix=resi%2Caps%2C250&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEySzlHTTlDVUcyVERVJmVuY3J5cHRlZElkPUEwMTM0OTk3RzhPQTdZOUZMTjREJmVuY3J5cHRlZEFkSWQ9QTA5MDc5NzQzR09RVElXODk1V0tZJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==
-https://store.steampowered.com/agecheck/bundle/16651
-https://www.metacritic.com/game/playstation-5/resident-evil-village
-https://howlongtobeat.com/game?id=80038
+Resident Evil 7 Biohazard
+https://www.amazon.com/-/es/Resident-Evil-Biohazard-Gold-PlayStation/dp/B075JF372G/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=196U44I8SWHXE&dchild=1&keywords=resident+evil+7&qid=1621315492&sprefix=resident+%2Caps%2C222&sr=8-1
+https://store.steampowered.com/app/418370/Resident_Evil_7_Biohazard/
+https://www.metacritic.com/game/playstation-4/resident-evil-7-biohazard
+https://howlongtobeat.com/game?id=38051
 It Takes Two
 https://www.amazon.com/-/es/Se-necesitan-dos-PlayStation-4/dp/B08Q43BKHG/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=89XWMPLSTY6C&dchild=1&keywords=it+takes+two+ps4&qid=1621121035&sprefix=it+takes+%2Caps%2C271&sr=8-1
 https://store.steampowered.com/app/1426210/It_Takes_Two/
@@ -135,12 +135,12 @@ https://www.metacritic.com/game/playstation-4/it-takes-two
 https://howlongtobeat.com/game?id=80199
 Assanssins's Creed Origins
 https://www.amazon.com/-/es/Assassins-Creed-Origins-PS4/dp/B072MQT2HV/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3LRMW2YXUEQ1N&dchild=1&keywords=assassins+creed+origins&qid=1621122650&sprefix=assassins+creed+or%2Caps%2C360&sr=8-1
-https://store.steampowered.com/app/582160/Assassins_Creed_Origins/
+https://store.steampowered.com/agecheck/app/582160/
 https://www.metacritic.com/game/playstation-4/assassins-creed-origins
 https://howlongtobeat.com/game?id=46402
 NieR Replicant ver.1.22474487139
 https://www.amazon.com/Square-Enix-Nier-Replicant-Ver-1-22474487139-PlayStation/dp/B08K265NX3/ref=sr_1_1_sspa?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=nier+replicant&qid=1621123340&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyRzdRTkJYRTBHU0M3JmVuY3J5cHRlZElkPUEwOTc5NzMwMkZMVkU0WEQ3RUo0NiZlbmNyeXB0ZWRBZElkPUEwNTUyNzk3VFFKNFlGMFFXOEtVJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==
-https://store.steampowered.com/app/1113560/NieR_Replicant_ver122474487139/
+https://store.steampowered.com/agecheck/app/1113560/
 https://www.metacritic.com/game/playstation-4/nier-replicant-ver122474487139
 https://howlongtobeat.com/game?id=76406
 Persona 5 Strikers
