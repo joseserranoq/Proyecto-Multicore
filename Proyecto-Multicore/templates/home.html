@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Proyecto G5</title>
+    <link href="css/mod.css" rel="stylesheet" type="text/css">
+    <title>Proyecto Multicore G5</title>
 </head>
 <body>
     <h1>Lista de juegos</h1>
+   
     <!--It make a python for with the list containing the games data-->
-    {%for i in range(0,len-1,5)%}  
+    {%for i in range(0,len-1,5)%}                 <!--Recorre las lineas para ir mostrandolas, mientras va brincando de 5 en 5-->                  
+        <div>
         <p>Nombre: {{data[i]}} 
         <p>Amazon: {{data[i+1]}} &nbsp; Steam: {{data[i+2]}} </p> 
         <p> Metascore: {{data[i+3]}}  &nbsp; HowLongtoBeat: {{data[i+4]}}</p>
         <p>&nbsp;</p>
-
-
-
-    
-
-        
+        </div>
+            
+       
     {%endfor%}
 
 
