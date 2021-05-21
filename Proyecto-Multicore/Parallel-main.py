@@ -5,15 +5,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import concurrent.futures
 import time
-
 from selenium.webdriver.chrome.options import Options
 
-import json
-
-
-#Se puede implementar mediante el threading que corra las funciones en forma paralela, creando funciones que ocupen los links de la lista pero que no dependan una de otra y mediante 
-#la obtención de las listas (listadetítulos,precios de steam, precios de amazon, score de metacritic, horas de how long to beat) se utilicen en una función para almacernalos
-#mediante un for secuencial todos los datos en orden en un .json
 
 
 # The idea is to create a function that travels by a loop to get the txt file information to generate web scraping with the respective information by order...
@@ -23,8 +16,7 @@ import json
 #3: Steam link index+2
 #4: Metacritic link index+3
 #5: Howlongtobeat link index+4
-#Then the another game with the same order...
-#Then with the obtainable information, it will allow to generate a .json file to start developing the web page with the help of HTML.
+
 path = 'Proyecto-Multicore\chromedriver.exe'   
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -34,7 +26,7 @@ driver3 = webdriver.Chrome(path,options=chrome_options)
 driver4 = webdriver.Chrome(path,options=chrome_options)
 
 
-def Obtain_amazonprice(links):
+def Obtain_amazonprice(links): #it finds the price in the amazon web page 
 
     driver1.get(links)
     try:
@@ -47,8 +39,8 @@ def Obtain_amazonprice(links):
     print(amaprice)
     return amaprice
 
-def st_price():
-    #driver.get(link)
+def st_price(): #It finds the price of the games in steam but only if the games does not have adult restriction.
+ 
     try:    #The try is implemented because if a variable called self.find_element... does not appear will raise an error
         stsearch= driver2.find_element_by_xpath('//div[@class="game_purchase_price price"]')
         price= stsearch.text
@@ -62,7 +54,7 @@ def st_price():
         print(f'{price} Discount')
     return price
 
-def agecheck_prices():
+def agecheck_prices():  #It finds the games that has age restriction in web page steam
     try:
                 #When the url changes we need to use wait method to search for the another values
         element= WebDriverWait(driver2,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='game_purchase_price price']")))   
@@ -74,9 +66,9 @@ def agecheck_prices():
         print(f'{price} Wait.discount')
     return price
 
-def age_verification(): #When age verification in steam appears the this function will pass the age verification to get the price of the game
-    #driver.get(link)
-    try:
+def age_verification(): #By try and except it will skip the age verification page in steam web page
+
+    try:    #It will enter a year 1900 to skip the age verification
         
         agemess = driver2.find_element_by_class_name('agegate_birthday_desc')
         y= driver2.find_element_by_xpath('//option[@value="1900"]')
@@ -93,11 +85,9 @@ def age_verification(): #When age verification in steam appears the this functio
 
     return price
 
-def Obtain_steamprice(link):
-    driver2.get(link)
-    #agever = link.split('/') #This will convert the link in a list where the position will be divided for '/'
-    #if agever[3] == 'agecheck': 
-    #    price = age_verification(link)
+def Obtain_steamprice(link):    #It is the main function to return the price of a game in steam web page, 
+    driver2.get(link)           #by a try it sees if the web page has a particular element that is only found in age verification pages in steam
+                                #The except contains a function that will return the price of amazon, games that does not have age restriction
     try:
         agever = driver2.find_element_by_xpath("//div[@id='app_agegate']") #If It does not raise an exeption is because this id is only in the pages with age verification
     
@@ -108,7 +98,7 @@ def Obtain_steamprice(link):
 
     return price
 
-def Obtain_Metascore(link): #tag a, tag span
+def Obtain_Metascore(link): #It obtains the score of the games 
     driver3.get(link)
     
     mtsearch = driver3.find_elements_by_class_name('metascore_anchor')
@@ -116,7 +106,7 @@ def Obtain_Metascore(link): #tag a, tag span
     score = mtsearch[0].text
     return score
 
-def Obtain_HLongtobeat(link):
+def Obtain_HLongtobeat(link):   #It obtains the main hour playtime of a game
     driver4.get(link)
 
     HLTBsearch = driver4.find_elements_by_class_name('game_times')
@@ -128,7 +118,7 @@ def Obtain_HLongtobeat(link):
 
 
 
-def Sort_info(): #It has some limitations like adult verification by steam, so the function will get content from games below that category
+def Sort_info(): #It will create lists that will contain the data of the games.txt file 
     
     titles = list() 
     amazon = list() 
@@ -139,7 +129,7 @@ def Sort_info(): #It has some limitations like adult verification by steam, so t
     with open('Proyecto-Multicore\games.txt','r') as file1:
         sites = file1.readlines()
 
-        for site in range(0,len(sites),5): #It creates indexes for the games, each game has information in 4 positions after the chose index in the loop,
+        for site in range(0,len(sites),5): #Each 5 position a title appears then i+1 amazon link, i+2 steam link, i+3 metacritic link, i+4 Howlongtobeat link
             titles.append(sites[site])
             amazon.append(sites[site+1])
             steam.append(sites[site+2])
@@ -151,8 +141,8 @@ def Sort_info(): #It has some limitations like adult verification by steam, so t
 
 
 def Generate_info():
-    list1,list2,list3,list4,list5  = Sort_info()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+    list1,list2,list3,list4,list5  = Sort_info() #It is used inside this function to make a loop that travels this lists by concurrent.futures
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor: #It is used like a way of parallelism the variables will return a list of objects
         
         r1 = [executor.submit(Obtain_amazonprice,amazon_ind) for amazon_ind in list2]
             
@@ -162,10 +152,10 @@ def Generate_info():
 
         r4 = [executor.submit(Obtain_HLongtobeat,ti) for ti in list5]
     
-    with open('Proyecto-Multicore\\templates\game_data.txt','w',encoding="utf-8") as file2:
-        for i in range(0,len(list1)):
-            print(f'{list1[i]}{r1[i].result()}\n{r2[i].result()}\n{r3[i].result()}\n{r4[i].result()[0]}-{r4[i].result()[1]}')
-            file2.write(f'{list1[i]}{r1[i].result()}\n{r2[i].result()}\n{r3[i].result()}\n{r4[i].result()[0]}-{r4[i].result()[1]}\n')
+    with open('Proyecto-Multicore\\templates\game_data.txt','w',encoding="utf-8") as file2: #It will be written the content of the variables r1,r2,r3,r4 and the list1 that contains the titles of the games
+        for i in range(0,len(list1)):                                                       #It need the variable enconding because it does not recognize the data in the lists produced by the parallel method
+            print(f'{list1[i]}{r1[i].result()}\n{r2[i].result()}\n{r3[i].result()}\n{r4[i].result()[0]}-{r4[i].result()[1]}') 
+            file2.write(f'{list1[i]}{r1[i].result()}\n{r2[i].result()}\n{r3[i].result()}\n{r4[i].result()[0]}-{r4[i].result()[1]}\n') #The lists produced by the parallel method will be accesed with .result()
         file2.close()
     driver1.quit()
     driver2.quit()

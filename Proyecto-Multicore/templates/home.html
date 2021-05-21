@@ -7,8 +7,8 @@
 <body>
     <h1>Lista de juegos</h1>
    
-    <!--It make a python for with the list containing the games data-->
-    {%for i in range(0,len-1,5)%}                 <!--Recorre las lineas para ir mostrandolas, mientras va brincando de 5 en 5-->                  
+    <!--It makes a python for with the list containing the games data-->
+    {%for i in range(0,len-1,5)%}                 <!--It makes an array with the list l_games -->                  
         <div>
         <p>Nombre: {{data[i]}} 
         <p>Amazon: {{data[i+1]}} &nbsp; Steam: {{data[i+2]}} </p> 
