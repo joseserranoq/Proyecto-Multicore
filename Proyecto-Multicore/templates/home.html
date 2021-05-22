@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link href="css/mod.css" rel="stylesheet" type="text/css">
-    <title>Proyecto Multicore G5</title>
-</head>
-<body>
-    <h1>Lista de juegos</h1>
-   
-    <!--It makes a python for with the list containing the games data-->
-    {%for i in range(0,len-1,5)%}                 <!--It makes an array with the list l_games -->                  
-        <div>
-        <p>Nombre: {{data[i]}} 
-        <p>Amazon: {{data[i+1]}} &nbsp; Steam: {{data[i+2]}} </p> 
-        <p> Metascore: {{data[i+3]}}  &nbsp; HowLongtoBeat: {{data[i+4]}}</p>
-        <p>&nbsp;</p>
-        </div>
-            
-       
-    {%endfor%}
 
+<head>
+    <title> Proyecto Multicore G5</title>
+</head>
+
+<body  style="background-color: #ffffff;">
+    <img style="height: 120px;width: 250px; float: right; margin-top: -50px;"   src="https://www.tec.ac.cr/sites/default/files/media/branding/logo-tec.png">
+    <h1 style="text-align: center; font-size: 35px; font-family: Georgia, 'Times New Roman', Times, serif; letter-spacing: 1rem;"> DESCENSO DE PRECIOS</h1>
+    <h1 style="text-align: center; font-size: 18px; font-family: Georgia, 'Times New Roman', Times, serif;letter-spacing: 1rem;">  MULTICORE</h>
+    <h3> </h3>
+    
+    <div style="background-color: #2E4053 ;">
+        <table class="default">
+    <tr>
+        <th style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD; "> <p > Nombre &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></th> 
+        <th style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;"><p > &nbsp;&nbsp;&nbsp;&nbsp;Amazon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p></th>
+        <th style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;"><p > &nbsp;&nbsp;Strem &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></th>
+        <th style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;"><p > Metascore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></th>
+        <th style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;">HowLongtoBeat</th>
+
+    <!--It makes a python for with the list containing the games data-->
+    {%for i in range(0,len-1,5)%}      
+                <!--It makes an array with the list l_games -->  
+                <tr>
+
+                        <td> <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;"> {{data[i]}}</p> </td>   
+                        <td> <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;" > &nbsp;&nbsp;&nbsp;{{data[i+1]}} </p > </td>
+                        <td> <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;">&nbsp;&nbsp;&nbsp;{{data[i+2]}} </p > </td>
+                        <td> <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;"> &nbsp;&nbsp;&nbsp;{{data[i+3]}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+                        <td> <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #FDFDFD;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[i+4]}}</p></td>
+                
+                  </tr>         
+   
+
+                  {%endfor%}
+    </tr>
+    </table>
+</div>
+  
+
+<p style="font-size: 12px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;"> Copyright 2021 </p> 
+<p style="font-size: 12px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;"> Durán Condega María Fernanda, Miranda Hernández María Belén, Serrano Quesada Jose </p> 
 
 
 </body>
