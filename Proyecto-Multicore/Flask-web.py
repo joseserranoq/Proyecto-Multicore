@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 #This file is used to create the web page that will have the content of the prices,scores,playtime,titles
+
 app = Flask(__name__)
 
 

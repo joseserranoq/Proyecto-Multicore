@@ -124,7 +124,6 @@ def Generate_info(): #It is the main function where by a loop it returns all the
 
             r1=sites[site].replace('\n','')        #It will be a function to save the titles of the games
 
-
             r2=Obtain_amazonprice(sites[site+1])   #it returns the amazon price
 
 
